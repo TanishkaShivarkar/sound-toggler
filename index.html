@@ -3,8 +3,63 @@
 <head>
     
     <title>Sound On/Off</title>
+    <style>
+        .container{
+           width: 500px;
+           
+           background-color: #f1f1f1;
+           display: block;
+           margin: 30px auto;
+           border-radius: 10px;
+           border: 1px solid black;
+           padding: 20px;
+        }
+        .sound{
+           height: 300px;
+           display: block;
+           margin: 10px auto;
+   
+        }
+        .buttons{
+           display: flex;
+           justify-content: space-around;
+           margin-top: 20px;
+        }
+        .btn-toggle{
+             width: 100px;
+             font-size: 20px;
+             border: none;
+             border-radius:15px;
+             padding: 2px 10px;
+        }
+        .btn-off{
+           background-color: red;
+           color: white;
+        }
+        .btn-on{
+           background-color: green;
+           color: white;
+        }
+       </style>
 </head>
 <body>
-    
+    <div class="container">
+        <img src="volume.png" id="sound" class="sound"/>
+    <div class="buttons">
+        <button class="btn-toggle btn-off" onclick="off()" >Off</button>
+        <button class="btn-toggle btn-on" onclick="on()">On</button>
+    </div>
+    </div>
+    <script>
+  const soundElement = document.getElementById ('sound');  
+
+  function on(){
+   soundElement.src="volume.png"; 
+  }
+ 
+  function off(){
+  soundElement.src="mute.png";
+  }
+    </script> 
 </body>
 </html>
